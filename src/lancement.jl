@@ -14,7 +14,12 @@ function partie98()
             println(Jeu_98[i])
             index = parse(Int64,readline())
             print("\e[2J")
-            jouer(Jeu_98["compteur"], Jeu_98[i], index, Jeu_98["defausse"], Jeu_98["pioche"])
+            if index < 1 || index > 5
+                println("Pas de carte correspondante. Sélectionner un autre nombre.")
+                index = parse(Int64,readline())
+            else
+                jouer(Jeu_98["compteur"], Jeu_98[i], index, Jeu_98["defausse"], Jeu_98["pioche"])
+            end
             if Jeu_98["compteur"][] >= 98 break end
             
             ## Pas sûr que cette partie marche
