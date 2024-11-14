@@ -1,4 +1,5 @@
 include("mvt_cartes.jl")
+include("tests_anti_erreurs.jl")
 
 # using Random
 # using JLD
@@ -27,17 +28,9 @@ function mise_en_place(nb_jr)
         println("Nombre de joueurs correct. Lancement du jeu.")
     else
         println("Nombre de joueurs incorrect. Veuillez changez.")
-        nb_jr = parse(Int64,readline())
+        nb_jr = nombre()
     end
     Jeu_98
 end
 
-
-# Vérifier si le bon joueur est prêt à jouer :
-function bon_joueur()
-    press = readline()
-    while press != "O"
-        println("Essayez de nouveau.")
-        press = readline()
-    end
-end
+Jeu_98 = mise_en_place(4)
